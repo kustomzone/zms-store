@@ -127,6 +127,13 @@ class Themes {
 			id, value
 		);
 	}
+
+
+	async install(theme) {
+		// First, open ZIP
+		const files = await zeroFS.readDirectory(`data/${theme.directory}/${theme.zip_name}`, true);
+		console.log("installing", theme, files);
+	}
 }
 
 
